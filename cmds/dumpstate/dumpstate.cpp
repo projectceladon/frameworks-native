@@ -1577,6 +1577,7 @@ int main(int argc, char *argv[]) {
         } else if (ds.extra_options_ == "bugreportremote") {
             do_vibrate = 0;
             is_remote_mode = 1;
+            do_zip_file = 1;
             do_fb = 0;
         } else if (ds.extra_options_ == "bugreportwear") {
             ds.update_progress_ = true;
