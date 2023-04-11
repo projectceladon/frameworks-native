@@ -374,6 +374,11 @@ void InputReader::loopOnce() {
     } // release lock
 
     size_t count = mEventHub->getEvents(timeoutMillis, mEventBuffer, EVENT_BUFFER_SIZE);
+    for(size_t i = 0; i < count; i++) {
+        ALOGE("INPUT EVENTS: %d %d %d %d", mEventBuffer[i].deviceId, mEventBuffer[i].type,
+                                                mEventBuffer[i].code, mEventBuffer[i].value);
+    }
+
 
     { // acquire lock
         AutoMutex _l(mLock);
